@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var index;
+        function getSelectedRow(){
+            var table = document.getElementById("tbl");
+            for(var i = 1; i<tbl.rows.length; i++){
+                tbl.rows[i].onclick = function(){
+                    if(typeof index !== "undefined"){
+                        tbl.rows[index].classList.toggle("selected");
+                    }
+                    index = this.rowIndex;
+                    this.classList.toggle("selected");
+                }
+            }
+        }
+        getSelectedRow();
+            
+    </script>
+</head>
+<body>
+    <table id="tbl">
+        <tr id="headotable" style="background-color: rgb(5, 5, 248); border: 2px solid black; color: aliceblue;">
+            <th>EMPLOYEE_ID</th>
+            <th>EMPLOYEE_NAME</th>
+            <th>SALARY</th>
+
+        </tr>
+
+        <tr style="background-color: antiquewhite;">
+            <td>1</td>
+            <th>rutguj</th>
+            <th>876878</th>
+            <th> <button onclick="myFunctionup()">UP</button></th> 
+            <th> <button onclick="myFunctiondown()">Down</button></th> 
+        
+        </tr>
+
+        <tr style="background-color: aquamarine;">
+            <th>2</th>
+            <th>anne</th>
+            <th>909808</th>
+            <th> <button onclick="myFunctionup()">UP</button></th> 
+            <th> <button onclick="myFunctiondown()">Down</button></th>
+        </tr>
+
+        <tr style="background-color: azure;">
+            <th>3</th>
+            <th>nun</th>
+            <th>089742</th>
+            <th> <button onclick="myFunctionup()">UP</button></th> 
+            <th> <button onclick="myFunctiondown()">Down</button></th>
+        </tr>
+
+    </table>
+</body>
+</html>

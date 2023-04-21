@@ -1,0 +1,85 @@
+After downloading maven 
+extract it 
+it has bin folder 
+now set path for it in environment variables
+setting path set in system variables and then in path
+
+then make a maven project
+then we copied it from mkyong website
+and also downloaded itextpdf dependency from it
+
+then in cmd
+
+C:\Users\User>mvn -v
+Apache Maven 3.9.0 (9b58d2bad23a66be161c4664ef21ce219c2c8584)
+Maven home: C:\Users\User\Desktop\Software Installments\apache-maven-3.9.0-bin\apache-maven-3.9.0
+Java version: 11.0.17, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-11.0.17
+Default locale: en_US, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+
+C:\Users\User>cd desktop
+
+C:\Users\User\Desktop>cd C:\Users\User\Desktop\Software Installments
+
+C:\Users\User\Desktop\Software Installments>cd my-maven-app
+
+C:\Users\User\Desktop\Software Installments\my-maven-app>mvn compile
+
+then if error is shown then 
+in pom add this properties
+
+<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+
+then again compile
+
+now to run the program
+
+C:\Users\User\Desktop\Software Installments\my-maven-app>mvn exec:java -Dexec.mainClass="com.mkyong.PdfWriteExample"
+
+mvn package 
+this will compile and make jar files 
+if that is not making then 
+add this in pom file
+
+<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.mkyong.PdfWriteExample</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- bind to the packaging phase -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+now then if we write this command in cmd then it will make jars
+
+first we will use "mvn package" then
+
+C:\Users\User\Desktop\Software Installments\my-maven-app>java -jar target/my-maven-app-0.0.1-SNAPSHOT.jar
+no main manifest attribute, in target/my-maven-app-0.0.1-SNAPSHOT.jar
+
+C:\Users\User\Desktop\Software Installments\my-maven-app>java -jar target/my-maven-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+Done
+
+
+

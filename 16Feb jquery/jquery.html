@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script> 
+    <script>
+        $(function(){    //logically similar to main function
+            $(".abc > p").css("color","red")
+        })
+        //using jquery DOM application
+        $(function(){    
+            $(".abc").children("p").css("color","red")
+        })
+        $(function(){    
+            $($("div").get(1)).children("p").css("color","yellow")   //gives second div since first div has 0
+        })
+        $(function(){    
+            $("div").last().children("p").css("color","")            //gives last div
+        })
+        $(function(){    
+            $("p").first().css("color","blue")
+        })
+    </script>
+            
+</head>
+<body>
+
+    <p>one</p>
+
+    <div class="abc">
+        <p>two</p>
+    </div>
+
+    <div><p>three</p></div>
+
+</body>
+</html>

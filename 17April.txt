@@ -1,0 +1,56 @@
+Tree
+
+	insertion by recursion
+	pre order process
+		left upper->left leaf -> right sibling leaf -> right upper (from below to up)
+
+
+preOrder
+{
+pseudocode
+	print function(root)
+	prints data
+	looks if there is left node
+	if yes calls print
+	looks if there is right node
+	if yes calls print
+}
+
+inorder
+{
+pseudocode
+	print function(root)
+	looks for left 
+	if yes calls print
+	prints data from node 
+	
+}
+
+postOrder
+{
+pseudocode
+
+}
+
+trversing level
+
+deleting node in Tree
+
+pseudocode
+
+function to call delete function
+delete function takes key and root node
+	base case check if tree is null or root is null
+	recurring the tree by searching through data if data is small call delete and give root.left and key, if data is greater then call delete and give root.right and key
+	now check if node has only one child or no child(if root has left = null return right, if root has right = null return left)
+	now check if node has two children (get in order successor (smallest in right tree))
+	to check above condition function(take root.key as min val and then using loop if root.left != null then min = root.left.key  and root = root.left)returns min;	
+	now delete inorder successor(this step is not understood)
+	return root
+
+apply avl tree
+
+
+Huffman Coding Algorithm
+100 0 11 0 101 11 0 101
+

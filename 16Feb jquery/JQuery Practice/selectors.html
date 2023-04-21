@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">
+
+    </script>
+    <script>
+       $(document).ready(function(){
+            //$("button").click(function(){
+                $("input").on({
+                    mouseenter: function(){
+                        $(this).fadeIn(1000, 0.9);
+                    },
+                    mouseleave: function(){
+                        $(this).fadeTo(1000, 0.1);
+                    },
+                    click: function(){
+                        $(this).fadeToggle(1000)
+                        
+                    }
+                }
+                    
+                );
+               
+                $("button").click(function(){
+
+                    $("div:first").fadeTogggle(1000);
+                    // $("div: first-child").fadeIn(5000);
+                })
+                
+                
+
+                
+                
+           // });
+        });
+    </script>
+</head>
+<body>
+    <p id="para">
+        hello guys
+    </p>
+    <ul>
+        <li>hhhhhhhh</li>
+        <li>dddddddddd</li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li>jjjjjjj</li>
+        <li></li>
+    </ul>
+    <br>
+    <div style="background-color: red;">
+        <p>
+            <div dip="jj" style="background-color: yellow;">
+                aaaaaaaaaaa
+            </div>
+        </p>
+        <p >
+            <div dip="hhh">
+                ssssssssssss
+            </div>
+        </p>
+    </div>
+    <div style="background-color: blue;">
+        wwwwwwwwww
+    </div>
+    <br>
+
+    <button type="button">
+       
+    </button>
+    <br>
+    <table>
+        <tr> 
+            <th>
+                llllllll
+            </th>
+            <th>
+                kkkkkkkkkkk
+            </th>
+        </tr>
+        <tr>
+            <td>rrrrrrrr</td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+    </table>
+    <input type="text">
+    
+</body>
+</html>

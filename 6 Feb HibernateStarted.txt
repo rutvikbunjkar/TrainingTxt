@@ -1,0 +1,8 @@
+ORM
+-Hibernate
+-Toplink
+-Eclipselink
+
+Hibernate-----------
+-makes it easy to communicate with any relational database
+

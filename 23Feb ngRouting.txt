@@ -1,0 +1,126 @@
+to start routing in angular
+
+1.make a nav bar
+
+2.imports: [
+    BrowserModule, FormsModule, RouterModule.forRoot(routes)
+  ],
+this is in module.ts
+
+3.const routes: Routes = [
+  {path: '', component: HelloComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent}
+
+]
+in module.ts
+
+4.import {RouterModule, Routes} from '@angular/router';
+in module.ts
+
+
+
+
+
+
+
+
+
+
+
+for validation in angular
+<h1>Registration Form</h1>
+    <form #myForm="ngForm"  (ngSubmit)="myForm.valid && register()">
+        <div class="form-group">
+            <label for="">Name</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                required minlength="2"
+                #name="ngModel"                              
+                [(ngModel)]="user1.name1" 
+                name="t2"
+                
+            />
+            <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert-danger"> -->
+              <div *ngIf="myForm.submitted" class="alert alert-danger">
+                <div *ngIf="name.errors?.['required']">
+                    Name is required.
+                </div>
+                <div *ngIf="name.errors?.['minlength']">
+                   Name must be at least 4 characters long.
+                </div>
+                <div *ngIf="name.errors?.['forbiddenName']">
+                    Name cannot be Bob.
+                </div>
+
+            </div>
+                 
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input 
+                type="email" 
+                class="form-control" 
+                #email="ngModel"
+                email="true"      
+                [(ngModel)]="user1.email1" 
+                name="primaryEmail"/>
+                <!-- <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert-danger"> -->
+                <div *ngIf="myForm.submitted" class="alert alert-danger">
+                    <div *ngIf="email.errors?.['email']">
+                        Enter a valid email.
+                    </div>
+                </div>
+        </div>
+        <div class="form-group">
+            <label >Username</label>
+            <input 
+                type="text"
+                class="form-control" 
+                required minlength ="1"
+                #uname="ngModel"
+                [(ngModel)]="user1.username"
+                name="t1"/>
+                <!-- <div *ngIf="uname.invalid && (uname.dirty || uname.touched)" class="alert-danger"> -->
+                <div *ngIf="myForm.submitted" class="alert alert-danger">
+                    <div *ngIf="uname.errors?.['required']">
+                        Name is required.
+                    </div>
+                    <div *ngIf="uname.errors?.['minlength']">
+                       Name must be at least 1 characters long.
+                    </div>
+                    <div *ngIf="uname.errors?.['forbiddenName']">
+                        Name cannot be Bob.
+                    </div>
+    
+                </div>
+                
+        </div>
+
+        <div class="form-group">
+          <label for="">password</label>
+          <input 
+            type="password" 
+            class="form-control" 
+            required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\s).{8,}$"
+            #pass="ngModel"
+            [(ngModel)]="user1.password" 
+            name="t4"/>
+            <!-- <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert-danger"> -->
+            <div *ngIf="myForm.submitted" class="alert alert-danger">
+                <div *ngIf="pass.hasError('required')">
+                    Name is required.
+                </div>
+                <div *ngIf="pass.errors?.['pattern']">
+                    Password must contain at least one number, one uppercase and a lowercase letter 
+                    and at least 8 characters<br>Password cannot contain whitespace
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+        
+    </form>

@@ -1,0 +1,4 @@
+npm - node package manager
+ 	repository for all libraries in js
+
+    

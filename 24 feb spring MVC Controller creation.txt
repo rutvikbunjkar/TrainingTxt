@@ -1,0 +1,68 @@
+for creating new maven project
+
+group id and war is to be selected( since it is a web project)  tthis is also called as deployment descripter so 
+to remove that error go to
+right click on project at left -> java ee(enterprise edition) -> Generate deployment descripter 
+
+
+add dependencies for spring
+<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.3.25</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.3.25</version>
+		</dependency>
+</dependencies>
+
+then in -> deployed resources -> webapp -> web-inf -> web.xml  do this
+
+<servlet>
+  	<servlet-name>mvc</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/my-spring-config.xml</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>mvc</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping> 
+
+copy here one spring config file from previous projects
+
+now create a controller class in main in resources
+
+add annotation above class definition as @Controller
+					public class HelloController{
+
+ 	@RequestMapping("url or lnk by which you want this controller to be fetched")
+	public String hello(Map map)             // this is model like in this code
+	map.put("message", "Welcome to Spring MVC")       // this is our code or operation in backend
+	return "hello.jsp";   // this is like view , here we have the code of html 
+ 
+}
+
+
+for creating jsp file 
+right click on project and -> new -> jsp file -> give name as above mentioned in request mapping
+
+in jsp to display message in map or model
+<h1>${ message }</h1>
+
+do not worry about the error 
+
+jsp runs on server and lives on server
+
+index page is missing so it is showing 404 error
+
+at very first we need to download a global ie platform independent server version from tomcat servers
+
+

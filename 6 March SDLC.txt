@@ -1,0 +1,32 @@
+sdlc - Software development lifecycle
+TDD - test driven development
+
+
+for testing first we use junit library
+
+on maven repositories search junit and version 4.13.2
+
+copy dependency to pom.xml in project
+
+go to new on right clicking on project -> junit test case -> new junit 4 -> give package name -> class name and finish
+
+new file will be created
+
+test case is a function annotated by @Test
+create the object of Class you want to test
+
+write code 
+
+then by right clicking on writing screen run as -> j unit test
+
+for running through cmd
+
+go to this project file and then
+mvn test
+
+divide test case in three parts 
+given 
+when 
+then
+
+

@@ -1,0 +1,24 @@
+// wrapper class
+
+for creating objects of primitive datatype
+in some places like collections we do not use primitive
+we are wrapping primitives
+Wrapper classes are expensive if we cerate an object once and give value then we assign another value to it then first value will get wasted for garbage collector
+different objects gets created everytime
+
+wrapper classes are immutable
+
+
+if double is used then it is primitive
+if Double is used then it is wrapper class
+
+
+
+-----------inner class
+
+writing a class inside a class
+
+if there is some private variable which is needed for our second class then we write it inside a parent clss
+here we cans see multiple inheritance ie if outer class extends some class and inner class extends another class
+so here this inner class is extending nearly 3 more classes
+

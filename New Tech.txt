@@ -1,0 +1,14 @@
+---NEW tech
+
+-nested exceptions
+-reflection api
+-streams and parallel streams
+-Do we use anywhere array of one element
+-networking
+-reflection api used for loading driver since eclipse
+-dao framework
+-factory framework
+
+blog 
+-vineet Manohar
+-mkyong

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let abc = {
+            e: 100,
+            b: 3,
+            c: 'we',
+
+            info : function(){
+                alert(this.e , this.b, this.c);
+            }
+        };
+
+        abc.info();
+
+        //todo object destructuring
+        const {e} = abc;
+        alert(abc.e);
+        alert(e);
+
+        //todo array destructuring
+        let arr = ["maruti", "honda", "tata"]
+        const[a, b, c] = arr;
+        const [x, ...y] = arr;
+
+        function hello(){
+            alert("hello hello hello");
+        }
+
+        hello();
+
+        //self invoking function
+        (function(){
+            alert("hi hi hi");
+        })();
+
+        //closure
+        function notUsingClosures(){
+            for(var i= 0; i<5; i++){
+                let link = document.createElement("a");
+                link.innerHTML = "Hyperlink" + i;
+                link.onclick = function(){
+                    alert(i);
+                }
+                document.body.appendChild(link);
+            }
+        }
+        notUsingClosures();
+
+    </script>
+    
+</body>
+</html>

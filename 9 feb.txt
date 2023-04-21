@@ -1,0 +1,46 @@
+- Creating Objects of classes
+	-there are different ways
+	-Option1
+------------------
+if we have class like this
+public class HelloWorld{
+
+}
+
+then in xml file, we need following entry
+<bean id="hello" class="com.pratiti.component.HelloWorld"/>
+
+Option 2
+use of annotations
+
+@Component("hello")
+public class HelloWorld{
+
+}
+
+still we have to write this line in xml file
+<context:component-scan base-package="package name"/>
+	
+
+	
+-Managing dependencies between the objects
+-we will have to do configuration for spring
+choose official site
+
+ <!-- this is we are telling spring to make an object of class helloworld and it will store it as hello in memory--> 
+	<bean id = "hello" class="com.pratiti.component.HelloWorld" />
+-spring will make only one object of our class 
+-we have to use this when we want to make an object of library
+this is called as singleton design pattern
+-
+-we want interface (interface is using loose coupling)
+if an atm is taking data from all the banks then it is LOOSE COUPLING
+so we want this
+
+if spring will make objects at runtime then it is using loose coupling
+-if we create object then it is tight coupling
+-
+-
+--
+-create an spell checker into java
+

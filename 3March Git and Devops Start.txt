@@ -1,0 +1,296 @@
+ life cycle if apps is like 
+
+develope test deploy maintain 
+
+server is maintained by ops team / it team / admin team 
+we developers will not be able to deploy any app on server
+
+devops is like a thought process/ cultural philosophy 
+
+first tool git it is a scm source code management tool
+git bash is a shell for linux for using git like feel on linux it is like simulator for linux
+git cmd is like normal command promt with git cmd
+
+in cmd
+
+C:\Users\User>cd..
+
+C:\Users>d
+'d' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users>d:
+
+D:\>cd girgit
+
+D:\girgit>git status
+fatal: not a git repository (or any of the parent directories): .git
+
+D:\girgit>git init
+Initialized empty Git repository in D:/girgit/.git/  
+
+<this creates hidden folder as .git in girgit folder>
+
+
+D:\girgit>git status    <use this git status after every step >
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+D:\girgit>notepad hello.txt
+
+D:\girgit>git status
+On branch master
+
+No commits yet
+
+Untracked files:                                                        <this here is asking us if git should track the file>
+  (use "git add <file>..." to include in what will be committed)
+        hello.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\girgit>git add hello.txt
+
+D:\girgit>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:                       <this is telling us that there is new foile which you have given me to track>    
+  (use "git rm --cached <file>..." to unstage)  <this command in "" telling us if we want to stop tracking then use this>
+        new file:   hello.txt
+<_____________________________>
+can also show like this
+
+D:\girgit>git status
+On branch master              <shows like this on second commit>
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   hello1.txt
+
+<________________>
+
+D:\girgit>git commit -m "i did changes and this is my first commit"                <this message is just for telling others that i did this changes in this file>
+[master (root-commit) 70e2c71] i did changes and this is my first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+
+D:\girgit>git log
+commit 847f9e812ff287b01052727cba7835a80413832b (HEAD -> master)
+Author: rutvikbunjkar <124385053+rutvikbunjkar@users.noreply.github.com>
+Date:   Fri Mar 3 11:56:27 2023 +0530
+
+    this is adding and commiting in one line
+
+commit 147f2c33706e9941cca42e1b0e4df63d9e901701
+Author: rutvikbunjkar <124385053+rutvikbunjkar@users.noreply.github.com>
+Date:   Fri Mar 3 11:50:04 2023 +0530
+
+    this is second time modifying
+
+commit feda7534c562bcc20fa3d71c7d7c689f5c0520ba
+Author: rutvikbunjkar <124385053+rutvikbunjkar@users.noreply.github.com>
+Date:   Fri Mar 3 11:48:07 2023 +0530
+
+    this is after modifying file
+
+commit 71e88c3269adfa5777ae514f3bbb439d928f93d1
+Author: rutvikbunjkar <124385053+rutvikbunjkar@users.noreply.github.com>
+Date:   Fri Mar 3 11:19:38 2023 +0530
+
+    i did second commit
+
+commit 70e2c719dcfc1fce935b52b26c3d50f64be93879
+Author: rutvikbunjkar <124385053+rutvikbunjkar@users.noreply.github.com>
+Date:   Fri Mar 3 11:14:48 2023 +0530
+
+    i did changes and this is my first commit
+ <now if you copy the commit id then use below command and you will go to previous version commits >
+
+D:\girgit>git checkout 147f2c33706e9941cca42e1b0e4df63d9e901701
+Note: switching to '147f2c33706e9941cca42e1b0e4df63d9e901701'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 147f2c3 this is second time modifying
+
+<we can only look and do experimental changes>
+
+
+D:\girgit>notepad hello1.txt  <this is previous version now>
+
+D:\girgit>git checkout master                                     <this is for coming in present>
+Previous HEAD position was 147f2c3 this is second time modifying
+Switched to branch 'master'
+
+D:\girgit>git remote add myremoterepo https://github.com/rutvikbunjkar/pratiti-01.git     <connecting our local repo with github repo>
+<here myremoterepo is only alias for connecting with github repo>
+D:\girgit>git push myremoterepo master   <this is like pushing local files to online repo >
+info: please complete authentication in your browser...
+<if we are doing it for first time then it will ask for password and emai then maybe on second time it will work >
+
+D:\girgit>git push myremoterepo master
+info: please complete authentication in your browser...
+
+D:\girgit>git status
+On branch master
+nothing to commit, working tree clean
+
+D:\girgit>git push myremoterepo master
+info: please complete authentication in your browser...
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (15/15), 1.41 KiB | 482.00 KiB/s, done.
+Total 15 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/rutvikbunjkar/pratiti-01.git
+ * [new branch]      master -> master
+
+D:\girgit>git push myremoterepo master
+Everything up-to-date
+
+D:\girgit>git pull myremoterepo master
+From https://github.com/rutvikbunjkar/pratiti-01
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+D:\girgit>
+<--------------------------------------------------------->
+for every project create another repo 
+<--------------------------------------------------------->
+
+
+
+
+----------------------------------------------------------------------
+
+to make a copy of online repo in our machine is like 
+
+creating folder
+
+in cmd 
+access the folder
+
+then to clone on git hub we will copy the path from code in online repo
+
+then in cmd 
+D:\developer2>git clone https://github.com/rutvikbunjkar/pratiti-01.git
+Cloning into 'pratiti-01'...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 15 (delta 3), reused 15 (delta 3), pack-reused 0
+Receiving objects: 100% (15/15), done.
+Resolving deltas: 100% (3/3), done.
+
+D:\developer2>cd 
+D:\developer1>cd pratiti-01
+
+D:\developer1\pratiti-01>
+
+<we will modify from dev 1 and push and then pull it from dev2>
+
+D:\developer1\pratiti-01>notepad hello1.txt
+
+D:\developer1\pratiti-01>git commit -am "developer1 is commiting after changing hello1"
+[master 71b7569] developer1 is commiting after changing hello1
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+D:\developer1\pratiti-01>git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+D:\developer1\pratiti-01>git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 360 bytes | 360.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/rutvikbunjkar/pratiti-01.git
+   847f9e8..71b7569  master -> master
+
+D:\developer1\pratiti-01>
+
+
+<----------------------------->
+
+D:\developer2\pratiti-01>git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), 340 bytes | 30.00 KiB/s, done.
+From https://github.com/rutvikbunjkar/pratiti-01
+ * branch            master     -> FETCH_HEAD
+   847f9e8..71b7569  master     -> origin/master
+Updating 847f9e8..71b7569
+Fast-forward
+ hello1.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+D:\developer2\pratiti-01>
+
+
+<------------------->
+now if one does changes on one line and pushes it and another does changes on same line and tries to push it error will occur and 
+then we will pull for getting the change what other has pushaed but now it will show us both our and others changes and then we will edit it to keep which changes we want
+<-------------------------------->
+
+thumb rule is we have to pull before doing any changes and do not touch others code without asking them /
+ but if you do so then do changes quickly and ask him to pull immediately so that he will change in newly modified file by you 
+<------------------------------------------->
+
+Why do we need branching
+
+if there is bug in our code and we dont know what no. of files are going to be modified
+so we will make another branch and modify it to remove bugs 
+after fixing we will merge it with master branch  
+we will only use it for RND in our code
+
+<------------------------------------------------------>
+
+to create new branch with name = 'bugfix'  here two apostrophys got mistakenly added in name
+D:\developer1\pratiti-01>git checkout -b 'bugfix' <here bugfix is name for branch>
+Switched to a new branch ''bugfix''
+
+<now we will change in file in this branch and we will get to know that it does not reflect in master>
+D:\developer1\pratiti-01>notepad hello1.txt
+
+D:\developer1\pratiti-01>git add hello1.txt
+
+D:\developer1\pratiti-01>git commit -m "this is first change in bugfix branch"
+['bugfix' 4afec17] this is first change in bugfix branch
+ 1 file changed, 2 insertions(+)
+
+D:\developer1\pratiti-01>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+D:\developer1\pratiti-01>hello1.txt
+
+
+<after fixing the bug wwe have to merge the branch with master>

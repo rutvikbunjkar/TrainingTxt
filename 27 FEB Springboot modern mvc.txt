@@ -1,0 +1,28 @@
+new modern mvc
+
+here view is in angular or react 
+
+controller is like rest api
+
+model is service/dao/entity
+
+to use spring
+
+open start.spring.io
+//use this tool or there will be difficulty in making project
+
+do required changes and then in add dependencies then
+add web, jpa, mysql driver, (optional) spring boot dev tools 
+
+click on generate 
+a zip file will be downloaded
+
+in eclipse in file open projects from file
+then on archive and select zip file then it will open it
+
+then in src/main/java make another package for controller
+make a controller file in it with @RestController as annotation on class
+then @RequestMapping("/....")  modern way is like @GetMapping("/....")
+actually in rest api methods should be specific so getMapping  ie request hasbeen sent from get method
+browser request is more like get method
+

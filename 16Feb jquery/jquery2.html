@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script> 
+    <script>
+        // $(function(){    //logically similar to main function
+        //    $("button").click(function(){
+        //     $("h2").toggle("slow")
+        //    })
+        //    $("button").click(function(){
+           
+        //     var priceElem = $("<p />").text("Rs 70000").attr("style", "color : red")            
+        //         $(".product").find("p").remove();
+        //         $(".product").append(priceElem);
+        //    })
+        // //    $("button").click(function(){
+        // //     var priceElem = $("<p />").text("Rs 70000").attr("style", "color : red")            
+        // //         $(".product").find("p").remove();
+        // //         $(".product").after(priceElem);
+        // //    })
+
+
+        // })
+        $(function(){    //logically similar to main function
+           $("button").click(function(){
+            $("h2").toggle("slow")
+           })
+           $("button").click(function(){
+            var productElem = $(this).closest(".product");   //this is giving us parent of this //get me close to .product  //
+            var price = productElem.data("price")     
+            var priceElem = $("<p />").text(price + "Rs").attr("style", "color : red")            
+            
+            productElem.find("p").remove();
+            productElem.append(priceElem);
+           })
+        })
+       
+       
+        
+    </script>
+    <style>
+        ul{
+           
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            margin: auto;
+        }
+    </style>
+            
+</head>
+<body>
+    <ul><li class="product" data-price="90000">
+            <h2>
+                iPhone14
+            </h2>
+            <button>
+                GET PRICE
+            </button>
+
+        </li>
+        <li class="product" data-price="49000"><h2>
+                Samsung
+            </h2>
+            <button>
+                GET PRICE
+            </button></li>
+        <li class="product" data-price="15000"><h2>
+                Realme
+            </h2>
+            <button>
+                GET PRICE
+            </button></li>
+        <li class="product" data-price="40000"><h2>
+            One plus
+            </h2>
+            <button>
+                GET PRICE
+            </button></li>
+    </ul>
+
+    
+
+</body>
+</html>

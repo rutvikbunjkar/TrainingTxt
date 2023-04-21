@@ -1,0 +1,14 @@
+binary tree type storing of files on disc storage
+
+Hash Tables : 
+
+linear probing
+quadratic probing
+
+
+Graphs
+
+Adjacency list
+
+Depth first search
+Breadth first search

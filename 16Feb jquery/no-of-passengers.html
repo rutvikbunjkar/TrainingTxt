@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script>
+        $(function(){
+             //use if form is used since it will reload page
+            
+            $("#okay").click(function(event){
+                var n =  $("#inpno").val();
+                event.preventDefault(); 
+                for(var i=0;i<n;i++){
+                var label1 = $("<label />").text("Passenger" + i + "Name");
+                var field1 = $("<input />").addClass("name");
+                var label2 = $("<label />").text("Passenger" + i + "Age");
+                var field2 = $("<input />").addClass("age");
+                $("form").append(label1);
+                $("form").append(field1);
+                $("form").append(label2);
+                $("form").append(field2);
+                $("form").append($("<br />"));
+            }
+            })
+
+            var passform = $ 
+
+            $("book").click(function(){
+                
+                    
+            })
+            
+        })
+
+    </script>
+    <style>
+        .header{
+            display: block;
+            margin: auto;
+            width: 600px;
+        }
+        #book{
+            display: block;
+            margin: auto;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        Enter no. of persons : 
+        <input id="inpno" type="number">
+        <button id="okay" >Okay</button>
+    </form>
+    <button id="book">book</button>
+    <form class="bookform" >
+
+    </form>
+        <!-- <div class="head">
+
+             <div class="noofpas">
+                <label for="">Enter No. of Passengers</label>
+                <input id="inpno" type="text">
+                <button class="btn" id="okay">OKAY</button>
+            
+            </div> -->
+            <!-- <div class="pas">
+                <div class="pasname">
+                    <label for="">Passenger Name</label>
+                    <input type="text">
+                </div>
+                <div class="pasage">
+                    <label for="">Passenger Age</label>
+                    <input type="text">
+                </div>
+            </div> -->
+        <!-- </div>
+        <button class="btn" id="book">
+         Book
+        </button>
+     -->
+
+    
+</body>
+</html>

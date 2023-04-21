@@ -1,0 +1,96 @@
+Abstraction
+ making objects of real world entities
+even if we create a class then we have achieved abstraction 
+
+abstraction
+ two types  
+  		data abstraction
+		method abstraction (for method abstraction we have to use abstract keyword)
+4 options in java to achieve abstraction 
+	class
+	interface
+	enum
+	annotations
+ 
+enum DayOfWeek {
+	MONDAY, TUESDAY, ...
+}
+
+method/function abstraction 
+suppose if i ask to develope a calculator to do addition and subtraction
+
+first create a class
+for add and sub we create function
+
+another way of looking is 
+public
+*****
+
+
+Encapsulation
+
+creating a class is as good as achieving encapsulation
+for medicine to be effective capsule has to be taken as whole
+
+google maps is best example for abstraction and encapsulation ( they have hid non essential data from us)
+
+
+
+Inheritance  
+
+parent  child relationship
+main focus is reusability
+ used for achieving  IS A RELATIONSHIP
+
+acquiring properties from parent class
+ class Vehicle{
+	int tyre;
+	engine;
+}
+class Car extends Vehicle{
+
+}
+class Bike extends Vehicle{
+
+} 
+
+there is one more of creating relationship bet class/objects
+HAS-A RELATIONSHIP // this is more important
+-Association
+   - one to one , one to many, many to many
+class Car{               // has-a relationship
+	Engine engine;
+}
+class Engine{
+
+}
+class V2Engine extends Engine{  // is-a relationship
+
+}
+
+Polymorphism
+
+One thing have many forms
+-Overloading/compiletime polymorphism/ earlybinding
+-Overriding/ runtime polymorphism/ late binding
+
+
+STATIC 
+can be used with variables and functions but their intentions is different
+
+//non static variables are also called as instance variables
+//static variables are also called as class variables  since these can also be accessed by class name ie Employee1.company
+
+so for static if we create two objects then both will give values to one variable since it is static
+so when the later object is called then it will override the salary value
+
+ static variable it has one copy in memory
+
+
+for static function will be loaded every time we call it and no difference in memory
+there is just difference in way of calling function
+
+
+
+
+

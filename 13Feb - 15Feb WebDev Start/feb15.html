@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+    <style>
+        h1{
+            text-shadow: 10px 10px 10px rgb(255, 119, 0);
+            color: blue;
+        }
+        h2{
+            font-family: 'Nabla', cursive;
+            text-shadow: 10px 10px 10px green;
+            color: blue;
+            font-size: 200%;
+        }
+        .inp{
+            animation-duration: 3s;
+            animation-name: move;
+            border: 1px solid gray;
+            padding: 4px 4px;
+            background-color: aquamarine;
+            width: 300px;
+            margin: 10px;
+        }
+        #first{
+           
+            border-top-right-radius: 25px;
+            border-bottom-left-radius:25px  ;
+        }
+        #second{
+            border-radius: 5px;
+        }
+        #mydiv{
+            width: 100px;
+            margin: auto;
+            height: 100px;
+            background: green;
+            border-radius: 5px;
+            transition-property: all;
+            transition-duration: 1s;
+            text-align: center;
+        }
+        p{
+            padding: auto;
+            width: 100%;
+        }
+        #mydiv:hover{
+            background: rgb(255, 145, 0);
+            border-radius: 50%;
+        }
+        #h{
+            animation-duration: 3s;
+            animation-name: move;
+        }
+        @keyframes move {
+            from{
+                margin-left: 100%; width: 100%;
+            }
+            to{
+                margin-left: 0%; width: 100%;
+            }
+        }
+        .resp{
+            border: 1px dashed black;
+        }
+        @media only screen and (max-width: 800px){
+                .resp{
+                     background-color: red;
+                }
+        }
+        @media only screen and (max-width: 900px){
+                .resp{
+                    background-color: yellow;
+                }
+        }
+        
+            
+
+    </style>
+</head>
+<body>
+    <h1>this is h1</h1>
+    <h2>this is h2</h2>
+    <input class="inp" id="first" type="text">
+    <input class="inp" id="second" type="text">
+    <div id="mydiv">
+        <p>this is my div Abbreviation</p>
+        
+    </div>
+    <h1 id="h">
+        murmur kurmur hamur tomur
+    </h1>
+    <div class="resp">
+        hdhchbdhcbh <br>
+        iuu
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+//Entity class objects are not given to spring 
+		
+-opening connection is very time taking
+- it will have to get shortest route to connect to database
+-assume it is 100ms for connecting  database then for execution it will only take 10ms
+
+
+-----Connection pooling  /  DATA SOURCE
+-we will open connections previously 
+-these connections are never closed
+-we only use connection for only executing the query
+-so connection will only be open at a clicking on some tab on a website
+so around 100 connections are needed for flipkart or so
+
+we will remove driver loading code and only write
+--conn = dataSource.getConnection();
+
+we have to use apache dbcp code in xml file in real sscenario
+in this code we can tell how much connections we want to use
+we will also have to add dependency in pom.xml file
+
+---------------
+to use hibernate with spring 
+-dependency of hibernate
+-@PersistenceContext
+-code for function
+-mapping = in class we have to give @Entity @Table(name ...)
+-config file
+
+
+
+-create a maven project
+-add required dependencies of hibernate and spring
+-create an entity class (ex.employee)
+-create a dao class(e.x. employeedao) which  will contain code for 
+	-adding an employee
+	-fetching all the employees
+-do the required configuration
+-finally write the main class to check the working

@@ -1,0 +1,11 @@
+Thumb Rule for JAVA
+
+1.static
+no need for new or initialising variable with class variable = new constructor(parameter);
+ rather than that we can simply call class.function();
+
+2.non static
+class variable = new constructor(parameter);  this way
+
+3.
+class variable = class.function(parameter); this is another way

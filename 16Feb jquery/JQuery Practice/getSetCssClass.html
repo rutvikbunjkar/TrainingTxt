@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("h1, h2, p").addClass("blue important");
+                $("div, h1").addClass("important");
+            });
+            $("#btn").click(function(){
+                $("h1").removeClass("important");
+            });
+            $("#tog").click(function(){
+                $("h1").toggleClass("blue");
+            });
+        });
+    </script>
+    <style>
+        .important{
+            font-size: 30px;
+            color: red;
+            background-color: aqua;
+        }
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>p11111111111</p>
+    <div>
+        jjjjjjjjjjjjjjjj
+    </div>
+    <h1>
+        h1111111111111
+    </h1>
+    <h2>
+        h22222222222222
+    </h2>
+    <p>p222222222</p>
+    <p>p33333333</p>  
+    <button>addClass</button>
+    <button id="btn">btn</button>
+    <button id="tog">toggle</button>
+</body>
+</html>

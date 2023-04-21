@@ -1,0 +1,51 @@
+Agile : many waterfall models iterated
+
+If data size is  small then we will use most understandable since most of the time it will be in maintainance sector 
+
+Selection sort
+
+Merge Sort
+	use when array is tooo big
+	
+	splitting list
+	splitting happens recursively
+	one element arrays are formed
+	then it compares two one element arrays and makes two element array by merging in sorted fashion
+	then two two element arrays are to be merged 
+	first compares two first elements and then the on which is smaller takes the first place in four element array 
+	......
+
+Quick sort
+
+
+
+Search Algorithms
+
+
+Scheduling problem
+
+pseudocode
+s
+class for activity
+array for activities
+storing activities in array via for loop
+sorting array with bubble sort 
+for loop
+	consider ith element 
+	if that elements end is greater than later elements start AND previous elements end is smaller than this elements start then
+	copy in arr1 
+
+
+Binary Search
+
+
+Linked List
+ memory is allocated randomly, frangmented memory, not contiguous
+
+When to use LL
+-when we dont know how many entries are there
+-
+ 
+
+
+

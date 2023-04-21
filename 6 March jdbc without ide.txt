@@ -1,0 +1,23 @@
+-----------------------------------------------------------
+this is code for running java jdbc code on cmd
+first we have to search for jar file from 
+right click on project in eclipse ->properties->compiler-> set compiler similar to the java -version -> 
+right click on project in eclipse -> build path -> select mysql connector jar file -> copy that jar file somewhere easily available -> like here we copied it in d drive
+we dont have to go to file 
+we will only go to root folder 
+since our .class files are in bin folder we will access it from here
+write both jar file path and bin path by separating both with ; in windows cmd and with this : in linux terminal
+then we will give path for our file like com.pratiti.training.jdbc.DBConn 
+--------------------------------------------------------------------------
+C:\Users\User\Desktop\Software Installments\HelloWorld>java -cp bin;D:\mysql-connector-j-8.0.32.jar com.pratiti.training.jdbc.DBConn
+yay, got connected..
+
+C:\Users\User\Desktop\Software Installments\HelloWorld>java -version
+java version "11.0.17" 2022-10-18 LTS
+Java(TM) SE Runtime Environment 18.9 (build 11.0.17+10-LTS-269)
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.17+10-LTS-269, mixed mode)
+
+C:\Users\User\Desktop\Software Installments\HelloWorld> DBConn
+
+------------------------------------------------------------------------
+since this is hard if we have multiple jar files so we use maven

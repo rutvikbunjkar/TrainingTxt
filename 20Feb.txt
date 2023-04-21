@@ -1,0 +1,26 @@
+for react
+
+--write export default after every function
+--keep all files you made in separate components folder
+-to start react
+
+-terminal
+-cmd
+-cd my-react-app
+-npm start
+
+to access some variable of js in html tags we use them between curly brackets
+
+
+- if we want to display variable on page
+	import {useState} from 'react'; 
+	use
+		const[varName, setVarName]= useState();
+
+		setVarName(event.target.value);
+
+
+
+three dots like in 
+
+...prevValues  // is destructuring

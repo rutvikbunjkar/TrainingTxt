@@ -1,0 +1,32 @@
+Linked list 
+	addtoend
+	addtostart
+	inertafter
+	insertat
+	
+Ordered list
+
+Insert
+pseudocode
+
+take input as key and value
+Node new1 = new node();
+if key is empty insert at start
+if key is not present in other nodes 
+	then
+	node n = root node
+	while loop starting from root and checking if it is not equal to null
+		node n
+		node n.next
+		if n.next.key > key
+			node n1 = n.next
+			n.next = new1;
+			new1.next = n1;
+			break;
+		n = n.next;
+
+DoublyLinkedList
+	create iterator
+
+circular Linked List 
+	create buffer

@@ -1,0 +1,156 @@
+SELECT * FROM hr.employees;
+
+SELECT * FROM hr.employees WHERE department_id = 90;
+SELECT * FROM hr.employees WHERE hire_date LIKE '___JAN___';
+SELECT * FROM hr.employees WHERE to_char(hire_date, 'MON') = 'JAN';
+--for concatenation two columns and putting space inbetween and make new names--
+
+SELECT first_name || ' ' || last_name AS full_name,
+     salary AS monthly_salary,
+     salary * 12 AS annual_salary
+FROM hr.employees;
+--fetch all employees who have no manager--
+SELECT * FROM HR.EMPLOYEES WHERE manager_id IS NULL ;
+--can also use no null--
+--fetch employees whose salary is same as the salary of shanta vollman--
+SELECT * FROM hr.employees WHERE salary = (Select salary FROM hr.employees WHERE first_name = 'Peter' AND last_name= 'Tucker');
+--SUB QUERIES--
+-- WHEN WE HAVE TO FETCH DATA FROM UNKNOWN VALUES--
+
+--FETCH THOSE EMPLOYEES WHOSE MANAGER IS SAME AS MANAGER OF Guy Himuro--
+SELECT * FROM hr.employees WHERE manager_id = (Select manager_id FROM hr.employees WHERE first_name = 'Guy' AND last_name= 'Himuro');
+
+SELECT * FROM  hr.employees ORDER BY first_name ASC, last_name DESC;
+
+--this will order by third given column that is salary--
+SELECT employee_id, hire_date, salary FROM hr.employees ORDER BY 3;
+
+SELECT * FROM hr.employees 
+
+ SELECT upper(first_name) FROM hr.employees;
+ SELECT sum(salary) FROM hr.employees;
+
+--in built functions in oracle ----
+--fetch department wise highest salary--
+SELECT department_id, max(salary) FROM hr.employees GROUP BY department_id;
+
+ --fetch department and job wise avg salary--
+
+ SELECT department_id, job_id, avg(salary) FROM hr.employees GROUP BY department_id, job_id;
+--joins--
+--fetching data from one or more tables
+---min no. of joins = no. of tables -1
+---
+
+--joins
+--fetch emp name, salary, dept name of all employees
+--old syntax here department is another table
+SELECT employee_id, first_name, salary, department_name FROM hr.employees,hr.department WHERE hr.employees.department_id = hr.departments.department_id;
+--new syntax of same thing
+SELECT e.employee_id, e.salary, e.first_name, d.department_name FROM hr.employees e, hr.departments d WHERE e.department_id = d.department_id;
+--in above using as is error we do not use as to give names to a table but we will use it for column--
+
+-- new syntax USE THIS
+SELECT e.employee_id, e.salary, e.first_name, d.department_name FROM hr.employees e JOIN hr.departments d ON e.department_id = d.department_id;
+
+--FETCH NAME SALARY AND JOB TITLE OF ALL YHE EMPLOYEES
+SELECT * FROM hr.employees;
+SELECT * FROM hr.jobs;
+SELECT e.first_name, e.salary, j.job_title FROM hr.employees e JOIN hr.jobs j ON e.job_id = j.job_id;
+-- remember names of table carefully you do not remember s after employee--
+
+SELECT * FROM hr.locations;
+-- fetch employee name ,dept name and dept location for all the employees --three tables needed (employees, department, locations)
+SELECT e.first_name, d.department_name, l.street_address FROM hr.employees e JOIN hr.departments d ON e.department_id = d.department_id JOIN hr.locations l ON d.location_id = l.location_id;
+
+SELECT * FROM hr.locations;
+-- fetch employee name ,dept name and dept location for all the employees --three tables needed (employees, department, locations)
+SELECT e.first_name, d.department_name, l.street_address 
+FROM hr.employees e JOIN hr.departments d 
+ON e.department_id = d.department_id 
+JOIN hr.locations l 
+ON d.location_id = l.location_id;
+------------
+--if you dont write inner before join that is simply join then it is taken that it is a inner join
+--fetch employee name and his her  managers name from the table --
+SELECT e.first_name, m.first_name FROM hr.employees e JOIN hr.employees m ON e.manager_id=m.employee_id;
+
+--outer join--
+--THIS WILL FETCH EVEN THAT INFO WHICH IS NOT COMMON BUT ONLY FROM LEFTSIDE TABLE--
+--EVEN THOSE EMPLOYEES ARE SEEN WHO DONT HAVE ANY DEPT--
+SELECT e.employee_id, e.salary, e.first_name, d.department_name FROM hr.employees e LEFT JOIN hr.departments d ON e.department_id = d.department_id;
+
+--CROSS JOIN--
+
+--when we have to compare one employees salary to other all employees salary and we dont want to repeat the comparison with itself--
+SELECT e1.first_name, e1.salary, e2.first_name, e2.salary FROM hr.employees e1 CROSS JOIN hr.employees e2 WHERE e1.job_id = 'IT_PROG' AND e1.employee_id != e2.employee_id;
+
+
+
+
+
+
+SELECT * FROM hr.jobs  WHERE min_salary > 10000;
+SELECT first_name, hire_date FROM hr.employees WHERE to_char(hire_date, 'yy') >= 02 AND to_char(hire_date, 'yy') <= 05;
+SELECT first_name, hire_date FROM hr.employees WHERE job_id= 'IT_PROG' OR job_id= 'SA_MAN';
+4 SELECT * FROM hr.employees WHERE hire_date > '01-JAN-2008';
+SELECT * FROM hr.employees WHERE employee_id = 150 OR employee_id = 160;
+SELECT first_name, hire_date, salary, commission_pct FROM hr.employees WHERE salary > 10000 ;
+7   SELECT job_title, max_salary  min_salary FROM hr.jobs WHERE max_salary > 10000 And max_salary < 20000;
+8   SELECT first_name,  FROM hr.employees;
+SELECT * FROM hr.jobs ORDER BY job_title desc;
+SELECT * FROM hr.employees WHERE first_name like 'S%' OR last_name like 's%';
+SELECT * FROM hr.employees WHERE to_char(hire_date, 'MON') = 'MAY' ;
+SELECT * FROM hr.employees WHERE commission_pct IS NULL AND salary < 5000 AND salary < 10000 AND department_id = 30;
+13   SELECT first_name, 
+SELECT first_name, 23 - to_char(hire_date, 'yy') AS EXPERIENCE FROM hr.employees;
+SELECT first_name, hire_date FROM hr.employees WHERE to_char(hire_date, 'yy') = '01';
+16  SELECT(first_name), UP(last_name) FROM hr.employees;
+17
+18  SELECT (first_name) FROM hr.employees WHERE last_name LIKE '___b%';
+SELECT upper(first_name), lower(email) FROM hr.employees WHERE lower(first_name) = lower(email);
+SELECT * FROM hr.employees WHERE to_char(hire_date, 'yy') = 23;
+
+21  
+22 SELECT
+23 SELECT manager_id FROM hr.employees e1 CROSS JOIN hr.employees e2
+24
+SELECT * FROM hr.employees WHERE to_char(hire_date, 'dd') > 15 AND to_char(hire_date, 'dd') < 31;
+26   SELECT country_id
+27  SELECT AVG(SALARY) FROM hr.employees GROUP BY department_id, commission_pct;
+28   SELECT job_id FROM 
+29  SELECT year(hire_date) FROM hr.employees GROUP BY year(hire_date) HAVING COUNT(employee_id) > 10;
+
+
+21  
+22 SELECT
+23
+ SELECT manager_id, count(*) AS No_of_employees FROM hr.employees GROUP BY manager_id;
+24
+SELECT employee_id, end_date FROM hr.job_history;
+SELECT * FROM hr.employees WHERE to_char(hire_date, 'dd') > 15 AND to_char(hire_date, 'dd') < 31;
+26   
+SELECT c.country_id, count(l.city) FROM hr.countries c JOIN hr.locations l ON c.country_id = l.country_id GROUP BY country_id;
+27 
+ SELECT AVG(SALARY) AS avg_salary FROM hr.employees WHERE commission_pct IS NOT NULL GROUP BY department_id;
+ 28
+ SELECT job_id, COUNT(*), SUM(salary), max(salary) - min(salary) AS difference FROM hr.employees GROUP BY job_id;
+ 29
+ SELECT job_id, avg(salary) FROM hr.employees GROUP BY job_id HAVING avg(salary) > 10000;
+ 30
+SELECT to_char(hire_date, 'yy'), COUNT(to_char(hire_date, 'yy')) FROM hr.employees GROUP BY to_char(hire_date, 'yy') HAVING COUNT(to_char(hire_date, 'yy')) > 10;
+SELECT department_name
+
+SELECT to_char(hire_date, 'yy'), COUNT(to_char(hire_date, 'yy')) FROM hr.employees GROUP BY to_char(hire_date, 'yy') HAVING COUNT(to_char(hire_date, 'yy')) > 10;
+31
+SELECT d.department_name, d.department_id  FROM hr.departments d LEFT JOIN hr.employees e ON e.department_id = d.department_id GROUP BY d.department_id, d.department_name HAVING COUNT(e.commission_pct) > 5;
+32
+SELECT employee_id FROM hr.job_history GROUP BY employee_id HAVING COUNT(employee_id) > 1; 
+33
+SELECT job_id FROM hr.job_history WHERE end_date-start_date>100 GROUP BY job_id HAVING COUNT(employee_id)>3;
+34
+SELECT department_id, to_char(hire_date, 'yy') AS year_no , COUNT(employee_id) AS employee_no FROM hr.employees GROUP BY to_char(hire_date, 'yy'), department_id;
+35
+SELECT manager_id, FROM hr.departments LEFT JOIN hr.employees GROUP BY manager_id HAVING COUNT(employee_id) > 5;
+
+SELECT * FROM hr.employees;

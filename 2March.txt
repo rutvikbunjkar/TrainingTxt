@@ -1,0 +1,16 @@
+while using post give this in body in postman 
+{
+    "name" : "Rohit",
+    "email" : "rohit@gmail.com",
+    "dateOfBirth" : "2001-04-30",
+    "password" : "rohit123",
+    "address" : {
+        "pincode" : "490798",
+        "city" : "pune",
+        "state" : "Maharashtra"
+    }
+}
+
+to store images or large data files we use BLOBS or CLOBS
+
+for reading input as file 

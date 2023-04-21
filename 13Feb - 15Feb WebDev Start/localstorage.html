@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="login()" method="post">
+    
+        enter username : <input type="text" name="username" id="uname" /><br /> 
+        enter password : <input type="text" name="pass" id="pass" /><br />
+        <button type="submit" >Login</button>
+    
+    </form>
+
+    <script>
+        function login(){
+            //localStorage.setItem("uname", btoa(document.getElementById("uname").value),30);
+            //localStorage.setItem("pass", btoa(document.getElementById("pass").value),30);
+            sessionStorage.setItem("uname", btoa(document.getElementById("uname").value),30);
+            sessionStorage.setItem("pass", btoa(document.getElementById("pass").value),30);
+            alert("done");
+            
+        }
+    </script>
+</body>
+</html>

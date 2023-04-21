@@ -1,0 +1,7 @@
+new modern mvc
+
+here view is in angular or react 
+
+controller is like rest api
+
+model is service/dao/entity

@@ -1,0 +1,11 @@
+sop
+
+same origin policy for security
+the code can only talk  to server from which it is downloaded
+
+so if we want to take some data from many servers then we have to use CORS
+
+for this we have to use annotation 
+@CrossOrigin
+
+no. of dao = no. of entity

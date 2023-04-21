@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script> 
+    <script>
+        $(function(){
+            $(".up").click(function(){
+                var currentElement = $(this).parents("tr:first")
+                var row =$(this).closest("tr");
+                if(row.prev().data("cond-in-up")!=="heading"){
+                row.prev().before(row);
+                //row.insertBefore(row.prev()); 
+                console.log("hi");
+                console.log(currentElement);
+                }
+                
+            })
+            $(".down").click(function(){
+                var row =$(this).closest("tr");
+                row.next().after(row);
+                //row.insertAfter(row.next());
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <table id="tbl">
+        <tr id="headotable" data-cond-in-up="heading" style="background-color: rgb(5, 5, 248); border: 2px solid black; color: aliceblue;">
+            <th>EMPLOYEE_ID</th>
+            <th>EMPLOYEE_NAME</th>
+            <th>SALARY</th>
+
+        </tr>
+
+        <tr style="background-color: antiquewhite;">
+            <td>1</td>
+            <td>rutguj</td>
+            <td>876878</td>
+            <td> <button class="up" >UP</button></td> 
+            <td> <button class="down">Down</button></td> 
+        
+        </tr>
+
+        <tr style="background-color: aquamarine;">
+            <td>2</td>
+            <td>anne</td>
+            <td>909808</td>
+            <td> <button class="up" >UP</button></td> 
+            <td> <button class="down">Down</button></td>
+        </tr>
+
+        <tr style="background-color: azure;">
+            <td>3</td>
+            <td>nun</td>
+            <td>089742</td>
+            <td> <button class="up" >UP</button></td> 
+            <td> <button class="down">Down</button></td>
+        </tr>
+
+    </table>
+</body>
+</html>

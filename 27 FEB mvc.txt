@@ -1,0 +1,38 @@
+add all the dependencies such as 
+spring orm
+spring context
+spring jdbc
+hibernate core
+mysql connector j
+
+
+create an table for table making 
+
+for dom class create one repository package and in it create one class 
+
+in that interface 
+public interface CustomerRepository extends JpaRepository<Customer, Integer>{
+	
+}
+
+create an jsp file on clicking on project name to write html code
+write html code
+
+create one controller file in controller package
+Do @Controller and @RequestMappingfor some function 
+
+update form tag as 
+action="/data in front of request mapping" //this is actually reference to which method the config file should represent
+
+update config file in webinf mySpringConfig for jdbc
+for hibernate
+for entitymanager factory
+for dao or repository
+for scanning controller
+
+this is how to run above code
+right click on project and run as then server then select tomcat server then on address bar you can write http://localhost:8080/spring-webapp/addCustomer.jsp
+
+to read data from user we use @RequestParam
+
+if we want to add condition in jsp file then we use 

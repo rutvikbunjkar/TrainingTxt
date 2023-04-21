@@ -1,0 +1,8 @@
+what is more expensive join or nested query
+
+unidirectional = customer and address , since object of address is in customer class but customer object is not in address class 
+bidirectional way of writing a code
+we will use cascade only when we have to we have to do operation on both classes
+//E is just a template variable
+<E> E 
+Class<E> // if we give class of Student type then in above line also it will take Student 

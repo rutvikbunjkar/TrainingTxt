@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                var div = $("div");
+                div.animate({left: '200px'});
+                div.animate({height: '300px', opacity: '0.4'}, "slow");
+                div.animate({width: '300px', opacity: '0.8', fontSize: '3em'}, "slow");
+                div.animate({fontSize: '1em'});
+                div.animate({height: '100px', opacity: '0.4'}, "slow");
+                div.animate({width: '100px', opacity: '0.8'}, "slow");
+                div.animate({left: '0px'});
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>dkhasksajhdkajhdkajshdkahs</p>
+    <button>start animation</button>
+    <div style="background: rgb(38, 0, 255); Color: white; height: 100px; width: 100px; position: fixed;">HELLO</div>
+    
+</body>
+</html>

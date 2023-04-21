@@ -1,0 +1,90 @@
+log4j,slf4j is a library used for logging
+
+logging  is when we keep track of what happened in our application tor trace for errors or failure of application
+logging is at every step of process
+
+like if customer gives feedback
+--your logger is storing data in only console give me a feature for storing data in files too
+
+version v1 = Logger = only console
+
+Version v2 = Logger = ConsoleLogger  and FileLogger
+
+version v3 = consolelogger , fillogger, databaselogger, emaillogger
+           = switching between the logger from consolelogger to filelogger is time consuming 
+
+
+INHERITANCE -------------------------------------
+Employee = 1.Manager  2.Developer
+parent class = 1.child class1  2.child class2
+
+@Override is a annotation
+suppose we do not write name of overriding method as same in parent class at that time @Override will show as error 
+that there is no such method in parent class
+gives us control on child class as we say that there must be like this method in parent class
+
+downcasting -----
+-----here 
+Logger logger = new ConsoleLogger();
+
+here type of logger is Logger  and  it is object of ConsoleLogger;
+
+to use method of child class
+((ConsoleLogger)logger).print();
+//this shows that please look logger as type consolelogger and let me allow to use print() method in class variable
+
+
+
+now if there is only a signature in parent class then write with abstract
+ie
+public abstract void log(String msg, LogLevel level);
+
+so if we do a method as abstract then we also have to do class as abstract
+as
+public abstract class Logger {}
+
+
+INTERFACE -------------
+Interface can only contain abstract method 
+here if we have to write a non abstract method then we have to write a default keyword ie
+public default void log(String msg){
+	sysout sdhfkjdfhk;
+} 
+
+and to extend interface we have to write implements in place of extends
+and to extend interface in interface   then use extends
+cannot create an object of interface
+
+
+---------Check design patterns in this helps us to create, etc.
+e.g. factory pattern is used to create objects and it will create objects and supply where required
+and we can change the type of object in factory class rather than changing everywhere,etc.
+
+
+inside the package only private is not accessible or else everything is accessible;
+
+for public everywhere it is available;
+
+for protected only those who extend parent class outside the package is available;
+
+
+string concatenation is lengthy or expensive operation so we use stringbuffer and stringbuilder is even more faster
+string builder is not thread safe so only use it where we have only one thread
+string buffer is thread safe so we can use it when we have more strings
+for muttable objects these are better
+    
+--------TODO 
+read about object class
+read about wrapper classes
+read about inner classes/ anonymous inner classes
+read about lambda expressions
+read about exception handling
+
+
+
+
+
+
+
+
+

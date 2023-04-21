@@ -1,0 +1,15 @@
+Hibernate/ JPA API(Java persistence api)
+
+-Coding 
+	-create class and map it to some table in the database
+	-We need to setup the database that we are going to connect our app
+	   (META-INF/persistence.xml)
+	-create folder META-INF  and file persistence.xml in src/main/resources
+	- in persistence code for java hibernate we have to change password and database name
+	-Now we will write code to perform any SQL operation (Dao class)
+		
+	-DAO
+	-if we want to insert data in database then we will use persist(object) data like table and column is in object
+	-remove for delete
+	-merge for update
+

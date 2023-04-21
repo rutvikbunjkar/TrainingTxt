@@ -1,0 +1,21 @@
+-We have an API as JDBC driver it can be seen as interface
+-driver is medium to talk to the database, driver will take us to our destination
+-mysql connector-> jdbc driver
+-Class.forName("packagename.classname");
+
+
+
+-closing connection is important it is done in finally block
+-for DML we use statementobject.executUpdate("sql command"); //return type is int for rows affected
+-for DQL we use stmt.executeQuery
+-execute can be used but its return type is boolean true for select type and false for dml
+- "?" is used as place holder
+
+
+-when executing Select statement use stmt.executeQuery(query)
+
+
+to close any variable or connection we do
+try(load driver statement full)
+catch{ exception for driver}
+try(connection variable statement full)

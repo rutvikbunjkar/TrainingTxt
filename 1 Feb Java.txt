@@ -1,0 +1,73 @@
+Exception  Handling
+-----------------
+- Exceptions are errors which may occur during the execution of a program
+- Anything is in static will be shown in itallics
+-Exceptions in Java are Objects of respective class
+-hierarchy
+- java.lang.Exceptions is parent of all exceptions in java
+-java.lang.
+-Object 
+	-Throwable
+		-Error
+			-Error and its subclasses are used for system level issues
+			-for low level issues
+			-e.g. OutOfMemoryError, StackOverflowError;
+
+		-Exception
+			-Exception and its subclasses are used for application level issues
+			-for high level issues
+			-e.g. ArrayIndexOutOfBoundsException, NumberFormatException;
+			-Two types of exceptions 
+				-Checked : checked exceptions are derived from Exception Class
+					-HAS TO BE HANDLED in the code
+					-e.g. IOException, SQLException, ...
+				-Unchecked : derived from RunTime Exception class;
+					-OPTIONAL to Handle
+					-e.g. NullPointerException, NumberFormatException, ... 
+
+
+throws is type like thing ie if there is yhrows then we know what it will throw
+use throw keyword to throw exception in catch e;
+
+But we should use our user defined exceptions
+like account exceptions and we have to create a class which extends Exception class or runtimeexception class
+
+there is also a finally block it is used to do things whatever happens
+
+TODO: 
+-Advanced concepts and features in exception handling
+-nested exceptions
+-reflection api
+-streams and parallel streams
+-
+
+
+
+Java code Execution-----
+1.byte Code verifier
+2. class loader
+3.JIT
+4. Garbage Collector
+5. Security Manager
+
+---------------
+Collections
+-------------------
+another name for data structure
+more than 14 types
+
+common type of collection is array
+
+
+List				Set					Map/Dictionary
+duplicate elements	unique elements		
+access via index	cannot access elements by index
+
+
+----Generics
+
+
+
+
+TODO - 
+-check about execution of java code

@@ -1,0 +1,48 @@
+ORM - object relational mapping
+-----------------------------------------------------------------
+not any reelation with above
+------------------------------------------------
+
+This is Microservice
+
+1.Persistence layer -(since here data will be there all the time or it will be persisted)this layer includes
+-dao
+-entity
+-database
+
+2.Business Logic layer
+-Service classes - this contains business logic
+
+3.Controller/Flow control logic
+-outside client will talk to the controller through frontend/browser
+
+conntroller will talk to business/service layer then this will talk to dao then dao will talk to db through entity
+
+in microservices there are multiple api   
+
+@Service  is same as @Component actually service is a type of component
+
+actually repository , controller , service these are all components
+
+
+in spring boot we do not need to make xml config file we will make settings in application propertiesfile
+
+after running springbootdemoapplication we will go on postman
+
+to talk in between client and server http protocol is no. 1
+
+http has some methods as Get, Post, Put, Delete
+Client will talk to server through front end and http protocol and this http protocol will communicate with controller
+
+get method less data 2000 chars and data will be sent by appending with url
+
+Post can transfer large amount of data from client to server
+data here can be sent into body(this is like a envelope)
+this means that everything in body gets stored in customer due to RequestBody
+
+
+
+-
+
+
+

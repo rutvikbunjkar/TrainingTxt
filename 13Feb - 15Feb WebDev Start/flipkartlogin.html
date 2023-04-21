@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: block;
+            margin: auto;
+        }
+        #window{
+            display: flex;
+            width: 70%;
+            height: 60%;
+            align-items: center;
+            justify-items: center;
+        }
+        #sbar{
+            display: block;
+        }
+        #content{
+            display: block;
+        }
+
+       form label{
+  
+  opacity: 0.6;
+  font-size: 1.25rem;
+  
+  pointer-events: none;
+  color: #3e392e;
+  transition: all .22s;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+}
+
+input{
+  width: 100%;
+  padding: 1.5rem;
+  background: #fdf9f9;
+  margin: 1.5rem 0;
+  border-width: 0px 0px 1px 0px solid blue;
+  color: #aaa;
+  font-size: 1.125rem;
+}
+
+ input:focus{
+  background: #f1d1d1;
+  outline: 0;
+}
+form input:hover + label, form input:focus + label{
+    top: 0;
+    font-size: 1.125rem;
+    transform: translateY(0);
+    left: 0;
+    opacity: 1;
+}
+#form{
+    display: block;
+    
+}
+#left{
+    display: block;
+  
+   
+    
+}
+
+.box{
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 750px;
+    height: 560px;
+    overflow: hidden;
+    background: white;
+
+}
+.box1{
+    background:url(https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png);
+    height: 150vh;
+    background-color: #2874f0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    </style>
+</head>
+<body>
+    <div id="window" class="col-sm-6 box">
+        <div id="left">
+            <div id="writeup">
+                <div id="login">
+                    Login
+                </div>
+                <div id="para" class="col-sm-6 box1">
+                Get access to your Orders, Wishlist and Recommendations
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 box2">
+        <form id="form" action="">
+            <div id="sbar">
+                <label for="" type="text">Enter Email/Mobile number</label>
+                <input type="text" name="" id="inp">
+            </div>
+            <div id="content">
+                By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.
+            </div>
+            <button id="btn">Request OTP</button>
+            <div id="footer"> 
+                <a href=""> New to Flipkart? Create an account </a>
+            </div>
+        </form>
+     </div>
+    </div>
+    
+
+</body>
+</head>

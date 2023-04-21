@@ -1,0 +1,11 @@
+protocol
+client 
+- server
+headers
+
+----------------
+-to ensure security we create digital certificate 
+-web server - aws, apache tomcat, apache http server 
+-
+-
+-

@@ -1,0 +1,41 @@
+----transition
+transition-property: border-radius;  // here we can do all than border radius 
+transition-duration: 1s;  //this is time taken for transition
+-animation-duration
+-animation-name
+-@keyframes move{
+	margin left
+}
+-
+-cookies--------------
+-this saves the state of user for that website 
+like if yesterday user was at a point then today if he uses this website again then he will be going to that point
+- 
+
+binary to a code
+
+all about cookies
+
+session storage
+
+local storage
+
+object destructuring
+
+array destructuring
+
+self invoking function
+
+closure
+
+constructor function
+
+javascript interpreter
+
+jquery
+
+DOM
+document object model
+
+
+

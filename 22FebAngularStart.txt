@@ -1,0 +1,54 @@
+these below all commands are used in cmd or powershell
+
+to install  
+npm i -g @angular/cli
+
+if you are in powershell then
+ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricte
+
+to create angular project
+PS C:\Users\User\Desktop\AngularDemos> ng new my-angular-app1 --minimal
+
+transcript is neither supported on clienside or serverside
+so we use transpiller or file is transpiled to Javascript
+
+to download typescript
+ npm i -g typescript
+
+to compile typescript file
+ tsc tsExample.ts
+ to run js file created by typescript file compilation
+node tsExample.js
+
+ constructor(name: string, age: number){
+        this.name = name;
+        this.age = age;
+    }
+if we want to make variables optional then 
+ constructor(name: string, age?: number){
+        this.name = name;
+        this.age = age;
+    }
+can also write
+ constructor(private name: string,  private age: number){
+      name = name;
+      age = age;
+    }
+
+to start angular app
+cd angular-app1
+ng serve -o 
+
+anythoing starting wit @ at starting it is a decorator
+
+to create components 
+ng g c componentname
+
+to attach all modules from form do
+app.module.ts -> imports -> imports: [
+    					BrowserModule, FormsModule
+  				      ]
+
+
+to take data from input use  
+<input type="password" class="form-control" [(ngModel)]="password" name="t2"/>

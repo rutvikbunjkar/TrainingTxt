@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border: 1px solid
+    black;">
+    your browser does not support html canvas tag
+    </canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c. getContext("2d");
+
+        var grad = ctx.createLinearGradient(500,7,0,4, 2, 4);
+        grad.addColorStop(0, "red");
+        grad.addColorStop(1, "white");
+
+        ctx.fillStyle = grad;
+        ctx.fillRect(10, 0, 150, 80)
+
+        ctx.front = "30px Arial";
+        ctx.strokeText("RUTVIK", 10, 50)
+    </script>
+</body>
+</html>

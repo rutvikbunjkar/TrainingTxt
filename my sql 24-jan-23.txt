@@ -1,0 +1,135 @@
+---------------------------------------------
+-- ER DIAGRAMS
+--TO FIND ENTITIES IN TABLES OR PROJECT
+--
+--normalisation
+--process of removing redundancy from database
+read about why we face issues while updating inserting deletion if table is not normalised
+-- studyto night database normalisation
+--1NF 
+--1. column should have only atomic values, that is only one value --- but there is tradeoff if we are losing too much time then we will not do normalisation
+--2NF
+-- table should be in first form 
+-- it should not have partial dependancy --a column which doesnt depend or have no relation with primary key ie it is depending partially on the composite primary key
+-- 3NF
+--table should be 1NF and 2NF
+--a column in a table which depends on a non primary key is transitive here is transitivity
+--
+
+
+-- creating database in mysql
+-- CREATE DATABASE ABCD;
+--CREATE TABLE DUMMY(EMPNO INT);
+
+--DDL COMMANDS
+--CREATING TABLE
+CREATE TABLE myemp
+(empno NUMBER(5),
+name VARCHAR2(40),
+email VARCHAR2(40),
+salary NUMBER(8, 2));
+                    
+                    
+                    
+                     ----NUMBER(NO. OF DIGITS IN NUMBER HERE WE HAVE USED 5) OR INT 
+                     -----INSTEAD OF VARCHAR WE CAN USE CHAR(20) BUT THIS WILL WASTE SPACE IF NAME IS SMALL, IN ORACLE WE USE VARCHAR2 LIKE THIS WE CAN STORE ALL TYPES OF LANGUAGE NAMES
+                     -----in number(8, 2) here number can be 8 digits long but last 2 digits are reserved for decimals
+DROP TABLE myemp;
+TRUNCATE TABLE table_name;---this will delete all the data in the table but table structure will rmain there;
+
+CREATE TABLE myemp
+( empno NUMBER(5) PRIMARY KEY,
+    name VARCHAR2(20) NOT NULL,
+    email VARCHAR2(40) UNIQUE,
+    salary NUMBER(8,2) CHECK(salary >= 10000));
+
+INSERT INTO myemp(empno, name, email, salary) VALUES (1001, 'Anushree', 'anushree@pratiti.com', 25000);
+---remember table name after into
+
+--violating with constraints 
+INSERT INTO myemp(empno, name, email, salary) VALUES (1002, 'Rutvik', 'rutvik@pratiti.com', 90000);
+
+CREATE TABLE mydept(
+    dept_no NUMBER(10) PRIMARY KEY,
+    name VARCHAR2(20),
+    location VARCHAR2(50));
+INSERT INTO mydept VALUES (10, 'IT', 'BANER');
+INSERT INTO mydept VALUES (20, 'HR', 'AUNDH');
+
+ALTER TABLE myemp ADD dept_no NUMBER(10);
+
+ALTER TABLE myemp ADD CONSTRAINT  emp_dept_fk FOREIGN KEY(dept_no) REFERENCES mydept(dept_no);
+or
+ALTER TABLE myemp ADD FOREIGN KEY(dept_no) REFERENCES mydept(dept_no);
+--previous statement is necessary since when we drop constraint we will be needing names ie emp_dept_fk
+ERROR-ALTER TABLE myemp DROP CONSTRAINT FOREIGN KEY emp_dept_fk;
+---checking 
+ERROR-INSERT INTO myemp VALUES( 1003, 'DEVESH', 'devesh@pratiti.com', 25000, 20);
+
+--UPDATE COMMAND
+
+
+CREATE TABLE myemp4
+(
+    empno NUMBER(8),
+    name VARCHAR2(20),
+    email VARCHAR2(40),
+    salary NUMBER(8, 2),
+    dept_no NUMBER(5),
+    CONSTRAINT emp4_no PRIMARY KEY(empno),
+    CONSTRAINT email4_uk UNIQUE(email),
+    CONSTRAINT salary4_ck CHECK(SALARY > 10000),
+    CONSTRAINT dept_no_4_fk FOREIGN KEY(dept_no) REFERENCES mydept(dept_no) 
+);
+
+DELETE FROM myemp WHERE empno= 1002;
+
+--can use dbdesigner, dbeaver to create tables
+SELECT * FROM myemp;
+
+35
+SELECT e.department_id, e.manager_id, COUNT(*) AS employee_count FROM hr.departments d LEFT JOIN hr.employees e ON e.department_id = d.department_id GROUP BY e.department_id, e.manager_id HAVING COUNT(*) >5;
+17
+SELECT hire_date, ROUND((sysdate - hire_date)/365, 0) AS Experience FROM hr.employees;
+36 UPDATE hr.employees SET salary = 8000 WHERE employee_id = 115 AND salary < 6000;
+37INSERT INTO hr.employees VALUES (999, 'hardy', 'thomas', 'htom', 511.111.1113 , 12-JAN-03, 'IT_PROG', 99000, NULL, 103, 90);
+38 DELETE FROM hr.departments WHERE department_id = 20;
+39 UPDATE hr.employees SET job_id = 'IT_PROG' WHERE job_id = 110 AND department_id = 10 AND job_id != LIKE'IT%'; 
+40 INSERT INTO hr.departments (manager_id) VALUES (120) WHERE location_id = (SELECT location_id FROM hr.locations WHERE city = 'Tokyo');
+41
+SELECT d.department_name , COUNT(*) AS no_of_employees FROM hr.departments d JOIN hr.employees e ON e.department_id = d.department_id GROUP BY d.department_name
+42
+SELECT j.job_title, h.employee_id, (h.end_date-h.start_date) AS difference FROM hr.job_history h,hr.jobs j WHERE h.job_id = j.job_id AND h.department_id = 30  ;
+43
+SELECT d.department_name, e.first_name FROM hr.employees e JOIN hr.departments d ON e.employee_id = d.manager_id GROUP BY d.department_name, e.first_name;
+SELECT DISTINCT(d.department_name), r.first_name FROM hr.employees e JOIN hr.departments d ON e.department_id = d.department_id JOIN hr.employees r ON d.department_id = e.department_id;
+44
+SELECT d.department_name, e.first_name, l.city FROM hr.employees e JOIN hr.departments d ON e.employee_id = d.manager_id JOIN hr.locations l ON d.location_id = l.location_id GROUP BY d.department_name, l.city, e.first_name;  
+45
+SELECT co.country_name, l.city, d.department_name FROM hr.locations l JOIN hr.countries co ON l.country_id = co.country_id JOIN hr.departments d ON l.location_id = d.location_id;
+46
+SELECT j.job_title, d.department_name, e.last_name, h.start_date FROM hr.employees e JOIN hr.departments d ON e.department_id = d.department_id JOIN hr.jobs j ON e.job_id = j.job_id JOIN hr.job_history h ON e.employee_id =  h.employee_id WHERE to_char(start_date, 'yy') > 00 AND to_char(start_date, 'yy') < 05; 
+47
+SELECT j.job_title, AVG(e.salary) FROM hr.employees e JOIN hr.jobs j ON e.job_id = j.job_id GROUP BY j.job_title;
+48-----
+SELECT j.job_title, e.first_name || ' ' || e.last_name AS employee_name, j.max_salary - e.salary AS difference FROM hr.employees e JOIN hr.jobs j ON e.job_id = j.job_id;
+49
+SELECT e.last_name, j.job_title FROM hr.employees e JOIN hr.jobs j ON e.job_id = j.job_id WHERE e.commission_pct IS NOT NULL AND e.department_id = 30;
+50----------
+SELECT e.employee_id FROM hr.jobs j LEFT JOIN hr.employees e ON e.job_id = j.job_id GROUP BY e.employee_id HAVING e.salary > 15000;
+51---------
+SELECT d.department_name, e.first_name, e.salary, e.manager_id FROM hr.employees e JOIN hr.departments d ON e.department_id = d.department_id GROUP BY e.manager_id, d.department_name HAVING ((sysdate - e.hire_date)/365) > 5;
+52---------
+SELECT e1.first_name, e1.employee_id FROM hr.employees e1 JOIN hr.employees e2 ON e1.employee_id = e2.manager_id  WHERE e1.hire_date < e2.hire_date AND e1.employee_id != e2.employee_id;
+53 -----
+SELECT e.first_name, j.job_title, 
+SELECT * FROM hr.employees;
+SELECT * FROM hr.departments;
+SELECT *FROM  hr.locations;
+SELECT * FROM hr.jobs;
+
+SELECT department_id, first_name, salary FROM hr.employees e WHERE salary = (SELECT max(salary) FROM hr.employees WHERE department_id = e.department_id)
+
+SELECT * FROM hr.job_history;
+SELECT * FROM hr.countries;
+

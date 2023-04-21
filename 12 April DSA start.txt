@@ -1,0 +1,136 @@
+SDLC -> 1.finding requirement
+        2.requirement analysis -> are they valid, are they feasible, are they functional requirement ex. which version to use, which color
+        3.Analsis and design -> no. of users, database, 
+        4.design -> on paper, specs of components, what to do, input, output
+        5.development
+        6.unit testing
+        7.integration and testing
+        8.bug fixing
+        9.production
+        10.maintenance
+
+Main trade off 
+ 1.space vs time 
+ 2.whuch database to be use 
+
+Agile 
+1. important requirements are considered and done
+2.quick dev and testing let's say 3 weeks -> this is called  sprint
+3.more sprints
+
+1.Sponsor requiremrnt is imp
+2.user inputs are imp
+3.systems req.
+
+What is a good req 
+atomic
+uniquely identified
+complete
+testable
+
+designing the program
+inputs -> how much and from where
+ui
+data flow and output
+logic
+
+Problem Statement 1.input temp in fahrenheit 5/9 * f - 32 into celsius
+
+writing pseudocode
+
+prompt to input in f
+var for f
+input in fehrenheit 
+operation
+var for c 
+print 
+end
+
+Problem Statement 2. swapping numbers and printing
+
+pseudocode
+
+prompt to input two values
+print two variables
+var to store two values
+var to take values from those two variables
+printing two variables
+end
+
+Problem Statement 3. input salaries and by some rules decide bonus
+
+pseudocode
+
+prompt to input salary
+print input salary
+perform operation
+Output Bonus
+end
+
+Testing  -> two types functional  and non-functional
+1.unit testing
+2.integration testing
+3.
+
+Which data structure to be used can be decided by 
+
+1.amount of data
+2.How r we going to get data
+3.how r we going to read it 
+etc
+
+Problem statement : input EMPLOYEE: id, name, basic salary, designation 
+                    create an object
+                    store this object in a array of 5 elements
+                    display the list of all employees
+		    ask if wants to delete an employee
+                    add an employee add in middle or add in first or add in last
+                      
+
+pseudocode
+
+Create a class with properties id,name,salary,designation
+import the class in main method
+prompt no. of employees want to insert
+var for storing above int
+definbe an array of above size
+for loop starts for no. of employees like array.length
+create an object of class
+prompt Enter Employee id 
+prompt Enter name
+prompt Enter salary
+prompt Enter designation
+take inputs and save them in object parameters by calling set methods from object
+add object in array
+for loop ends
+prompt if he wants to delete 
+take input as yes or no
+if string is yes then prompt to give id of employee to be deleted
+Forloop for deleting
+remove method on array to remove the employee with that id 
+array element with id+1 his id becomes id-1
+while(!i=array[i].getId)
+with if st. if id is not equal index then array[i]= that object
+
+PS 5: update, override, search, 
+
+
+Bubble Sort
+
+Insertion Sort
+
+ps4
+bubble
+insert
+ps5
+
+ 
+
+
+
+
+
+
+
+
+

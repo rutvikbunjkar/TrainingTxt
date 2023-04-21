@@ -1,0 +1,13 @@
+in 
+var y = function(){
+
+}
+here what does this y stores in memory
+
+what is $ doing in  
+$(function(){    //logically similar to main function
+            $("p").css("color","red")
+        })
+-
+
+-
